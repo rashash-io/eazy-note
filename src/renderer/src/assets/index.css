@@ -30,4 +30,12 @@
   ::-webkit-scrollbar-track {
     @apply bg-transparent;
   }
+  .logo-bg-r {
+    background-image: url('./logo-bg.png');
+    background-attachment: scroll;
+    background-position-y: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: lighten;
+  }
 }

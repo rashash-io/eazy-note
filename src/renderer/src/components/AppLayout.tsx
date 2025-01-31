@@ -12,10 +12,13 @@ export const RootLayout = ({ className, children, ...props }: ComponentProps<'ma
 export const Sidebar = ({ className, children, ...props }: ComponentProps<'aside'>) => {
   return (
     <aside
-      className={twMerge('w-[250px] h-[100vh] overflow-auto backdrop-blur-3xl', className)}
+      className={twMerge(
+        'w-[250px] h-[100vh] logo-bg-r overflow-auto backdrop-blur-3xl ',
+        className
+      )}
       {...props}
     >
-      <div className="mt-2">{children}</div>
+      <div className="mt-2  ">{children}</div>
     </aside>
   )
 }

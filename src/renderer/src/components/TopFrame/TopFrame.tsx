@@ -6,6 +6,8 @@ import { FaWindowMinimize } from 'react-icons/fa'
 import { IoIosCloseCircle } from 'react-icons/io'
 import { TbWindowMaximize } from 'react-icons/tb'
 import { twMerge } from 'tailwind-merge'
+import Logo from '../../../../../resources/icon.png'
+
 // -------------- TITLE COMPONENT  -------------- //
 function getTitle() {
   const currentFile = ''
@@ -64,12 +66,21 @@ export const QuitButton = ({ ...props }: CtrlButtonProps) => {
     </CtrlButton>
   )
 }
+export const LogoButton = ({ ...props }: CtrlButtonProps) => {
+  return (
+    <CtrlButton {...props}>
+      <img src={Logo} alt="logo" className="w-7 h-7 rounded-full" />
+    </CtrlButton>
+  )
+}
 // -------------- TRAFFIC LIGHT GROUP COMPONENT  -------------- //
 export const TopFrame = () => {
   return (
     <>
-      <div className="flex flex-row gap-6 justify-between items-center text-2xl h-16 px-2">
-        <div>Logo</div>
+      <div className="flex flex-row gap-6 justify-between items-center text-2xl h-16 px-4">
+        <div>
+          <LogoButton />
+        </div>
 
         <div>
           <Title />

@@ -1,6 +1,18 @@
-# note-mark
+<div align="center">
+  <img alt="Logo" src="https://raw.githubusercontent.com/rashash-io/developer-portfolio/refs/heads/main/public/logo1000.webp" width="100" />
+</div>
 
-An Electron application with React and TypeScript
+
+<div align="center">
+  
+  # EazyNote
+</div>
+A simple notes app that uses Markdown (.md files) for formatting
+<hr/>
+<div>
+  <img  width="80%" height="80%" src="/resources/EazyNotePreview.png">
+</div>
+
 
 ## Recommended IDE Setup
 

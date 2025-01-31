@@ -1,0 +1,86 @@
+import { selectedNoteAtom } from '@renderer/store'
+import { appDirectoryName } from '@shared/constants'
+import { useAtomValue } from 'jotai'
+import { ComponentProps } from 'react'
+import { FaWindowMinimize } from 'react-icons/fa'
+import { IoIosCloseCircle } from 'react-icons/io'
+import { TbWindowMaximize } from 'react-icons/tb'
+import { twMerge } from 'tailwind-merge'
+// -------------- TITLE COMPONENT  -------------- //
+function getTitle() {
+  const currentFile = ''
+  return `${appDirectoryName} - ${currentFile}`
+}
+export const Title = () => {
+  const selectedNote = useAtomValue(selectedNoteAtom)
+  const doc = selectedNote?.title != null ? selectedNote?.title : ''
+
+  return (
+    <>
+      <span className="font-bold mx-2">{`[${appDirectoryName}]`}</span>
+      <span className="font-thin italic">{doc}</span>
+    </>
+  )
+}
+
+// -------------- BASE BUTTON COMPONENT  -------------- //
+export type CtrlButtonProps = ComponentProps<'button'>
+export const CtrlButton = ({ className, children, ...props }: CtrlButtonProps) => {
+  return (
+    <button
+      className={twMerge(
+        'rounded-full hover:bg-slate-800/50 p-2 transition-all duration-200',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+
+// -------------- SEPERATE BUTTONS COMPONENTS  -------------- //
+export const MinButton = ({ ...props }: CtrlButtonProps) => {
+  const handleMinimize = () => window.context.minimize()
+  return (
+    <CtrlButton onClick={handleMinimize} {...props}>
+      <FaWindowMinimize className="hover:text-blue-500" />
+    </CtrlButton>
+  )
+}
+export const MaxButton = ({ ...props }: CtrlButtonProps) => {
+  const handleMaximize = () => window.context.maximize()
+  return (
+    <CtrlButton onClick={handleMaximize} {...props}>
+      <TbWindowMaximize className="hover:text-yellow-500" />
+    </CtrlButton>
+  )
+}
+export const QuitButton = ({ ...props }: CtrlButtonProps) => {
+  const handleQuit = () => window.context.quit()
+  return (
+    <CtrlButton onClick={handleQuit} {...props}>
+      <IoIosCloseCircle className="hover:text-pink-500" />
+    </CtrlButton>
+  )
+}
+// -------------- TRAFFIC LIGHT GROUP COMPONENT  -------------- //
+export const TopFrame = () => {
+  return (
+    <>
+      <div className="flex flex-row gap-6 justify-between items-center text-2xl h-16 px-2">
+        <div>Logo</div>
+
+        <div>
+          <Title />
+        </div>
+
+        <div>
+          <MinButton />
+          <MaxButton />
+          <QuitButton />
+        </div>
+      </div>
+    </>
+  )
+}

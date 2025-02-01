@@ -1,29 +1,10 @@
-import { selectedNoteAtom } from '@renderer/store'
 import { appDirectoryName } from '@shared/constants'
-import { useAtomValue } from 'jotai'
 import { ComponentProps } from 'react'
 import { FaWindowMinimize } from 'react-icons/fa'
 import { IoIosCloseCircle } from 'react-icons/io'
 import { TbWindowMaximize } from 'react-icons/tb'
 import { twMerge } from 'tailwind-merge'
 import Logo from '../../../../../resources/icon.png'
-
-// -------------- TITLE COMPONENT  -------------- //
-function getTitle() {
-  const currentFile = ''
-  return `${appDirectoryName} - ${currentFile}`
-}
-export const Title = () => {
-  const selectedNote = useAtomValue(selectedNoteAtom)
-  const doc = selectedNote?.title != null ? selectedNote?.title : ''
-
-  return (
-    <>
-      <span className="font-bold mx-2">{`[${appDirectoryName}]`}</span>
-      <span className="font-thin text-base italic">{doc}</span>
-    </>
-  )
-}
 
 // -------------- BASE BUTTON COMPONENT  -------------- //
 export type CtrlButtonProps = ComponentProps<'button'>
@@ -83,7 +64,7 @@ export const TopFrame = () => {
         </div>
 
         <div>
-          <Title />
+          <span className="font-bold mx-2">{`[${appDirectoryName}]`}</span>
         </div>
 
         <div>

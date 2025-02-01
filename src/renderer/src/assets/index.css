@@ -16,6 +16,7 @@
     @apply rounded-3xl overflow-hidden;
   }
   header {
+    @apply bg-red-950 inset-0 border-dashed border-red-500 overflow-hidden;
     -webkit-app-region: drag;
   }
   button {

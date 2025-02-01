@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 export const FloatingNoteTitle = ({ className, ...props }: ComponentProps<'div'>) => {
   const selectedNote = useAtomValue(selectedNoteAtom)
   return !selectedNote ? null : (
-    <div className={twMerge('flex justify-center', className)} {...props}>
+    <div className={twMerge('flex justify-center mt-16', className)} {...props}>
       <span>{selectedNote.title} </span>
     </div>
   )

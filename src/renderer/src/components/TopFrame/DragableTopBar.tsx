@@ -8,7 +8,6 @@ export const DragableTopBar = () => {
       <div className="absolute w-full h-14 z-20 top-0">
         <TopFrame />
       </div>
-      <div className="h-10 z-20"></div>
     </>
   )
 }

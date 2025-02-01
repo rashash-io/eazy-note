@@ -20,7 +20,7 @@ export const Title = () => {
   return (
     <>
       <span className="font-bold mx-2">{`[${appDirectoryName}]`}</span>
-      <span className="font-thin italic">{doc}</span>
+      <span className="font-thin text-base italic">{doc}</span>
     </>
   )
 }

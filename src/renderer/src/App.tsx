@@ -4,7 +4,7 @@ import {
   DragableTopBar,
   FloatingNoteTitle,
   MarkdownEditor,
-  NotePreviewList,
+  NoteSearch,
   RootLayout,
   Sidebar
 } from '@components'
@@ -23,7 +23,8 @@ const App = () => {
       <RootLayout>
         <Sidebar className="p-4">
           <ActionButtonsRow className="flex justify-between" />
-          <NotePreviewList className="mt-3 space-y-1" onSelect={resetScroll} />
+          <NoteSearch />
+          {/* <NotePreviewList className="mt-3 space-y-1" onSelect={resetScroll} /> */}
         </Sidebar>
         <Content ref={contentContainerRef} className="border-l bg-zinc-900/50  border-l-white/20">
           <FloatingNoteTitle className="pt-2" />

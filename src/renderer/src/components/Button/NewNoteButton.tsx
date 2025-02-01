@@ -10,7 +10,7 @@ export const NewNoteButton = ({ ...props }: ActionButtonProps) => {
   }
   return (
     <ActionButton onClick={() => handleCreation()} {...props}>
-      <VscNewFile className=" text-zinc-300" />
+      <VscNewFile className="hover:text-green-500  text-zinc-300" />
     </ActionButton>
   )
 }

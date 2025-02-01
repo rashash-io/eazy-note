@@ -15,6 +15,7 @@
     "noUnusedLocals": false,
     "baseUrl": ".",
     "paths": {
+      "@electron-toolkit/tsconfig": ["node_modules/@electron-toolkit/tsconfig"],
       "@tailwindcss/vite":[
         "node_modules/@tailwindcss/vite/dist/"
       ],
